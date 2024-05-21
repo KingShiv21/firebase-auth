@@ -1,12 +1,12 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { TwitterAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth, db } from "./firebase";
 import { toast } from "react-toastify";
 import { setDoc, doc } from "firebase/firestore";
 
-function SignInwithGoogle() {
-  function googleLogin() {
+function Twitter() {
+  function twitterLogin() {
 
-    const provider = new GoogleAuthProvider();
+    const provider = new TwitterAuthProvider();
     signInWithPopup(auth, provider).then(async (result) => {
       console.log(result);
       if (result.user) {
@@ -26,11 +26,11 @@ function SignInwithGoogle() {
       <p className="continue-p">--Or continue with--</p>
       <div
         style={{ display: "flex", justifyContent: "center", cursor: "pointer" }}
-        onClick={googleLogin}
+        onClick={twitterLogin}
       >
-        <img src={require("../google.png")} width={"60%"} />
+        twitter
       </div>
     </div>
   );
 }
-export default SignInwithGoogle;
+export default Twitter;

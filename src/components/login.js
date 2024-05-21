@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { auth } from "./firebase";
 import { toast } from "react-toastify";
 import SignInwithGoogle from "./signInWIthGoogle";
+import SignInWithFacebook from "./SignInWithFacebook";
+import Twitter from "./Twitter";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -61,6 +63,8 @@ function Login() {
         New user <a href="/register">Register Here</a>
       </p>
       <SignInwithGoogle/>
+      <SignInWithFacebook/>
+      <Twitter/>
     </form>
   );
 }
